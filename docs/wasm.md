@@ -1,6 +1,6 @@
 # DuckDB-Wasm
 
-*Documentation for `mt564` v0.1.0. [Back to the README](../README.md).*
+*Documentation for `mt564` v0.1.1. [Back to the README](../README.md).*
 
 The extension is also built for [DuckDB-Wasm](https://github.com/duckdb/duckdb-wasm), so
 `read_mt564` can run in a browser or in Node.

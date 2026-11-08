@@ -4,13 +4,15 @@ Prebuilt binaries of the `mt564` DuckDB extension, which adds `read_mt564` for r
 SWIFT FIN MT564 (Corporate Action Notification) message batches with SQL.
 
 This repository contains **only the compiled extension**; the source code is not public.
-Current version: **v0.1.0**. Download the files from the [Releases](https://github.com/wdorninger/ddb_mt564-releases/releases) page.
+Current version: **v0.1.1**. Download the files from the [Releases](https://github.com/wdorninger/ddb_mt564-releases/releases) page.
 
 ## Files
 
 | File | Platform |
 |---|---|
 | `mt564.linux_amd64.duckdb_extension` | Linux x86-64 (glibc ≥ 2.28) |
+| `mt564.osx_arm64.duckdb_extension` | macOS Apple Silicon (macOS ≥ 11) |
+| `mt564.osx_amd64.duckdb_extension` | macOS Intel (macOS ≥ 11) |
 | `mt564.windows_amd64.duckdb_extension` | Windows x86-64 |
 | `mt564.duckdb_extension.wasm` | DuckDB-Wasm (`wasm_eh`, browser / Node) |
 | `SHA256SUMS` | checksums |
@@ -40,11 +42,14 @@ DuckDB-Wasm: open the database with `allowUnsignedExtensions: true` and
 `LOAD 'https://<your host>/mt564.duckdb_extension.wasm'` (served with CORS). Globs are not available in the
 Wasm build; pass explicit file paths or a list.
 
+macOS: a downloaded file is quarantined by Gatekeeper; clear the flag before loading it with
+`xattr -d com.apple.quarantine mt564.osx_arm64.duckdb_extension`.
+
 Keep the file name starting with `mt564.`: DuckDB derives the extension name from the part before the first dot.
 
 ## Documentation
 
-Documentation for v0.1.0:
+Documentation for v0.1.1:
 
 | Page | Contents |
 |---|---|

@@ -1,6 +1,6 @@
 # Using `read_mt564`
 
-*Documentation for `mt564` v0.1.0. [Back to the README](../README.md).*
+*Documentation for `mt564` v0.1.1. [Back to the README](../README.md).*
 
 This page covers inputs, types, NULLs and scanning behaviour. The MT564 structure, the `level=` grains and
 the output columns are described in [mt564.md](mt564.md).
