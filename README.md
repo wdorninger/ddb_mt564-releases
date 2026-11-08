@@ -4,7 +4,7 @@ Prebuilt binaries of the `mt564` DuckDB extension, which adds `read_mt564` for r
 SWIFT FIN MT564 (Corporate Action Notification) message batches with SQL.
 
 This repository contains **only the compiled extension**; the source code is not public.
-Download the files from the [Releases](https://github.com/wdorninger/ddb_mt564-releases/releases) page.
+Current version: **v0.1.0**. Download the files from the [Releases](https://github.com/wdorninger/ddb_mt564-releases/releases) page.
 
 ## Files
 
@@ -15,7 +15,11 @@ Download the files from the [Releases](https://github.com/wdorninger/ddb_mt564-r
 | `mt564.duckdb_extension.wasm` | DuckDB-Wasm (`wasm_eh`, browser / Node) |
 | `SHA256SUMS` | checksums |
 
-Works with **DuckDB ≥ 1.5.6, including 2.0.x** (built on DuckDB's stable C extension API).
+## DuckDB version compatibility
+
+Works with **DuckDB ≥ 1.5.6, including 2.0.x**. The extension is built on DuckDB's stable C extension API (version
+v1.5.6), so the same binary loads into every newer DuckDB release without rebuilding. Remote storage (httpfs/S3),
+secrets and caching come from the DuckDB that loads it.
 
 ## Usage
 
@@ -37,6 +41,17 @@ DuckDB-Wasm: open the database with `allowUnsignedExtensions: true` and
 Wasm build; pass explicit file paths or a list.
 
 Keep the file name starting with `mt564.`: DuckDB derives the extension name from the part before the first dot.
+
+## Documentation
+
+Documentation for v0.1.0:
+
+| Page | Contents |
+|---|---|
+| [docs/mt564.md](docs/mt564.md) | `read_mt564`: message structure, `level=` grains, columns, worked examples, options |
+| [docs/usage.md](docs/usage.md) | Inputs, globs, remote files, replacement scan, types, NULLs, parallelism, errors |
+| [docs/wasm.md](docs/wasm.md) | Using the DuckDB-Wasm build in a browser or Node |
+| [examples/deep_dive.txt](examples/deep_dive.txt) | the (anonymized) example messages used in docs/mt564.md |
 
 ## Third-party notices
 
